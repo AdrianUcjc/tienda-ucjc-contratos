@@ -3,9 +3,9 @@
 Aquí viven los contratos **firmados** (un fichero Markdown por evento).
 
 - Repositorio **público**. Si el fichero no está en esta carpeta de `main`, **no cuenta** para la tienda.
-- Hoy (**11/11/2026**, tag del repo **`v0.2.0`**): los tres del flujo mínimo están **`firmado`**. El [ejemplo de formato](EJEMPLO-como-rellenar.md) sigue siendo solo plantilla (**no implementar**).
+- Hoy (**18/11/2026**, tag del repo **`v0.2.0`**): los tres del flujo mínimo siguen **`firmado`**. No hay ficheros `propuesto` nuevos. El [ejemplo de formato](EJEMPLO-como-rellenar.md) sigue siendo solo plantilla (**no implementar**).
 - Mapa del camino punta a punta: [`FLUJO-MINIMO.md`](FLUJO-MINIMO.md).
-- No dejéis borradores en la **raíz** del repositorio.
+- No dejéis borradores en la **raíz** del repositorio. No mutéis un `@1` firmado: proponer versión nueva o evento nuevo.
 
 ## Contratos activos (`firmado`)
 

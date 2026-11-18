@@ -5,15 +5,16 @@ Repositorio central de **contratos de eventos** de la práctica **Tienda UCJC** 
 **Repositorio (público):** https://github.com/cesar-andress/tienda-ucjc-contratos  
 **Shell en vivo:** https://cesar-andress.github.io/tienda-ucjc-shell/
 
-## Situación actual (11/11/2026) · tag `v0.2.0`
+## Situación actual (18/11/2026) · tag `v0.2.0`
 
 | Hecho | Estado |
 | --- | --- |
-| Tag / release | **`v0.2.0`** — flujo mínimo `@1` firmado |
+| Tag / release | **`v0.2.0`** — flujo mínimo `@1` firmado (sin tag nuevo desde el 11/11) |
 | Este repositorio | **Público** (lectura para todos; escritura solo el profesor) |
-| Carpeta [`eventos/`](eventos/) en `main` | Los **tres** contratos del flujo mínimo están **`firmado`** (+ [ejemplo de formato](eventos/EJEMPLO-como-rellenar.md), no implementar) |
-| Flujo mínimo | [`eventos/FLUJO-MINIMO.md`](eventos/FLUJO-MINIMO.md) |
-| Shell | Tag `v0.2.0` · `manifest.json` con `remote.js` HTTPS de alumnos |
+| Carpeta [`eventos/`](eventos/) en `main` | Los **tres** contratos del flujo mínimo siguen **`firmado`** (+ [ejemplo de formato](eventos/EJEMPLO-como-rellenar.md), no implementar) |
+| Eventos `propuesto` nuevos | **Ninguno** aún — el siguiente corte debe **añadir** contrato (p. ej. `@1` de otro verbo o `@2`), no mutar los tres firmados |
+| Flujo mínimo | [`eventos/FLUJO-MINIMO.md`](eventos/FLUJO-MINIMO.md) · operable en la tienda en vivo |
+| Shell | Tag `v0.2.0` · mismas cuatro piezas HTTPS en el `manifest.json` |
 
 ### Los tres mensajes del flujo mínimo (nombres canónicos)
 

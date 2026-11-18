@@ -31,8 +31,9 @@ Nada más entra en el paquete `@1`. Listados de usuarios, stock inverso Compra�
 
 Además, para entrar en el shell: `remote.js` + `export default` + Pages HTTPS (ver contrato de carga del shell). Eso es **release**, no contrato.
 
-## Estado (11/11/2026) · tag `v0.2.0`
+## Estado (18/11/2026) · tag `v0.2.0`
 
-1. Los tres ficheros están en `eventos/` de `main` con estado **`firmado`** (tag del repo de contratos: **`v0.2.0`**).
-2. Varios equipos ya publicaron `remote.js` HTTPS alineados a estos nombres.
-3. El shell (`v0.2.0`) enchufa las URLs activas en su `manifest.json` (ver README del shell).
+1. Los tres ficheros siguen en `eventos/` de `main` con estado **`firmado`** (tag del repo de contratos: **`v0.2.0`**).
+2. Las cuatro piezas enchufadas en el shell publican `remote.js` HTTPS alineados a estos nombres (Identidad `v0.2.2`; resto `v0.2.0`).
+3. El shell (`v0.2.0`) mantiene las mismas URLs en `manifest.json` (ver README del shell).
+4. No hay aún contratos `propuesto` para el siguiente corte: cualquier evolución **no** modifica estos tres `@1`.
