@@ -79,8 +79,8 @@ No cambia `anadir-al-carrito@1` ni `pedido-confirmado@1`.
 
 ## Estado del contrato
 
-- [x] `propuesto`
-- [ ] `firmado`
+- [ ] `propuesto`
+- [x] `firmado`
 - [ ] `deprecado`
 
 ## Historial
