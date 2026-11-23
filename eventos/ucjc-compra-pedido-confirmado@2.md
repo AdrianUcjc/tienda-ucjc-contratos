@@ -83,6 +83,8 @@ Igual que en `@1`: `productoId`, `nombre`, `precio`, `cantidad` (todos obligator
 | --- | --- | --- | --- | --- |
 | Compra | Emisor | `Adrián Pingarrón` | `2026-11-23`| `OK + próximo release`|
 | Datos A | Consumidor | | | |
+| Compra | Emisor | | | |
+| Datos A | Consumidor | Hans Jefferson Arauco Sanchez| 23/11/2026 | Firmado |
 | Datos B | Consumidor | | | |
 
 ## Estado del contrato
