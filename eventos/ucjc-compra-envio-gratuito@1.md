@@ -1,13 +1,11 @@
-# Plantilla de contrato de evento
-
-Copiad este fichero a `eventos/` y renombradlo según el evento, por ejemplo `ucjc-pieza-verbo@1.md`.  
-Sustituid todos los marcadores `<…>`. No dejéis ejemplos inventados como si ya estuvieran firmados.
+# Contrato: ucjc:compra:envio-gratuito@1
 
 ## Nombre del evento
 
 ```text
 ucjc:compra:envio-gratuito@1
 ```
+Nombre de fichero: `ucjc-compra-envio-gratuito@1.md`
 
 ## Versión
 
@@ -22,7 +20,7 @@ ucjc:compra:envio-gratuito@1
 
 ## Equipos consumidores
 
-- `<datos>`
+- `Datos (A y B)`
 
 ## Descripción
 
@@ -34,6 +32,8 @@ Evento que informa de si un pedido cumple las condiciones para disponer de enví
 | --- | --- | --- | --- |
 | `<evio_gratuito>` | `booleano` | obligatorio | |
 | `Indica si el pedido cumple las condiciones para tener envío gratuito.`|
+| `<pedidoId>` | `string` | obligatorio | |
+| `Identificador del pedido al que corresponde el evento.`|
 
 ## Campos obligatorios y opcionales
 
@@ -44,11 +44,13 @@ Evento que informa de si un pedido cumple las condiciones para disponer de enví
 
 ```json
 {
+  "pedidoId": "PED-2026-1101",
   "envio_gratuito": true
 }
 ```
 ```json
 {
+  "pedidoId": "PED-2026-1101",
   "envio_gratuito": false
 }
 ```
