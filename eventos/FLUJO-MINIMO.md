@@ -31,9 +31,9 @@ Nada más entra en el paquete `@1`. Listados de usuarios, stock inverso Compra�
 
 Además, para entrar en el shell: `remote.js` + `export default` + Pages HTTPS (ver contrato de carga del shell). Eso es **release**, no contrato.
 
-## Estado (18/11/2026) · tag `v0.2.0`
+## Estado (23/11/2026) · tag contratos `v0.2.1`
 
-1. Los tres ficheros siguen en `eventos/` de `main` con estado **`firmado`** (tag del repo de contratos: **`v0.2.0`**).
-2. Las cuatro piezas enchufadas en el shell publican `remote.js` HTTPS alineados a estos nombres (Identidad `v0.2.2`; resto `v0.2.0`).
-3. El shell (`v0.2.0`) mantiene las mismas URLs en `manifest.json` (ver README del shell).
-4. No hay aún contratos `propuesto` para el siguiente corte: cualquier evolución **no** modifica estos tres `@1`.
+1. Los tres ficheros del flujo mínimo siguen en `eventos/` de `main` con estado **`firmado`** (sin mutar).
+2. Tag del repo de contratos: **`v0.2.1`** — añade propuestas Black Friday en estado **`propuesto`** (ver [`PROPUESTA-BLACK-FRIDAY.md`](PROPUESTA-BLACK-FRIDAY.md) y [`ucjc-descubrimiento-campana-cambiada@1.md`](ucjc-descubrimiento-campana-cambiada@1.md)).
+3. Shell en vivo: tag **`v0.2.1`** (Identidad `0.2.3`, Descubrimiento `0.2.3`, Datos B `0.2.1`; Compra/Datos A en `0.2.0`).
+4. Evolución Black Friday (27/11): **evento nuevo** de campaña y/o campos opcionales votados en clase el 25/11. **No** se reescriben en silencio los tres `@1` firmados.
