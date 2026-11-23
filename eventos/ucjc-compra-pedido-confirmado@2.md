@@ -87,8 +87,8 @@ Igual que en `@1`: `productoId`, `nombre`, `precio`, `cantidad` (todos obligator
 
 ## Estado del contrato
 
-- [x] `propuesto`
-- [ ] `firmado`
+- [ ] `propuesto`
+- [x] `firmado`
 - [ ] `deprecado`
 
 ## Historial
