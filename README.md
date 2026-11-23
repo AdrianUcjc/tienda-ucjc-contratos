@@ -5,15 +5,15 @@ Repositorio central de **contratos de eventos** de la práctica **Tienda UCJC** 
 **Repositorio (público):** https://github.com/cesar-andress/tienda-ucjc-contratos  
 **Shell en vivo:** https://cesar-andress.github.io/tienda-ucjc-shell/
 
-## Situación actual (23/11/2026) · tag `v0.2.2`
+## Situación actual (23/11/2026) · tag `v0.2.3`
 
 | Hecho | Estado |
 | --- | --- |
-| Tag / release | **`v0.2.2`** — `@1` firmados + Black Friday en `propuesto` |
+| Tag / release | **`v0.2.3`** — `@1` firmados + dos propuestas BF |
 | Este repositorio | **Público** (escritura solo el profesor) |
 | Firmados | Los tres del flujo mínimo |
-| Propuestos | [`campana-cambiada@1`](eventos/ucjc-descubrimiento-campana-cambiada@1.md) — el profesor propone, los equipos aceptan en clase |
-| Cómo aceptarlos | [`PROPUESTA-BLACK-FRIDAY.md`](eventos/PROPUESTA-BLACK-FRIDAY.md) |
+| Propuestos | [`campana-cambiada@1`](eventos/ucjc-descubrimiento-campana-cambiada@1.md) · [`pedido-confirmado@2`](eventos/ucjc-compra-pedido-confirmado@2.md) |
+| Cómo decidir | [`PROPUESTA-BLACK-FRIDAY.md`](eventos/PROPUESTA-BLACK-FRIDAY.md) |
 | Shell | Tag `v0.2.1` |
 
 ### Los tres mensajes del flujo mínimo (nombres canónicos)
@@ -30,10 +30,11 @@ ucjc:compra:pedido-confirmado@1
 | `anadir-al-carrito@1` | [`eventos/ucjc-descubrimiento-anadir-al-carrito@1.md`](eventos/ucjc-descubrimiento-anadir-al-carrito@1.md) | `firmado` |
 | `pedido-confirmado@1` | [`eventos/ucjc-compra-pedido-confirmado@1.md`](eventos/ucjc-compra-pedido-confirmado@1.md) | `firmado` |
 | `campana-cambiada@1` | [`eventos/ucjc-descubrimiento-campana-cambiada@1.md`](eventos/ucjc-descubrimiento-campana-cambiada@1.md) | `propuesto` |
+| `pedido-confirmado@2` | [`eventos/ucjc-compra-pedido-confirmado@2.md`](eventos/ucjc-compra-pedido-confirmado@2.md) | `propuesto` |
 
-El `@1` es la versión del **contrato del evento**. No es lo mismo que el tag de la pieza (`v0.2.0`, `v1.0.0`, …).
+El `@1` / `@2` es la versión del **contrato del evento**. No es lo mismo que el tag de la pieza (`v0.2.0`, `v1.0.0`, …).
 
-**Black Friday (27/11):** el profesor propone; en clase firmáis la tabla de responsables. Detalle en [`PROPUESTA-BLACK-FRIDAY.md`](eventos/PROPUESTA-BLACK-FRIDAY.md).
+**Black Friday (27/11):** dos propuestas; en clase decidís y firmáis. Ver [`PROPUESTA-BLACK-FRIDAY.md`](eventos/PROPUESTA-BLACK-FRIDAY.md).
 ## Qué es Tienda UCJC
 
 Tienda UCJC es una tienda web de campus construida por cuatro equipos independientes. Cada equipo desarrolla y publica su propio micro-frontend. El shell del profesor los carga en tiempo de ejecución.

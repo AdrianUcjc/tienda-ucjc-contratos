@@ -1,10 +1,10 @@
 # Black Friday — qué propone el profesor (27/11/2026)
 
-El profesor deja aquí contratos en estado **`propuesto`**.  
-En clase, cada responsable **acepta** (firma en la tabla del contrato).  
-Hasta que no esté **`firmado`**, no es la referencia de la tienda.
+El profesor deja contratos en **`propuesto`**.  
+En clase **decidís** y, si hay acuerdo, firmáis la tabla de responsables.  
+Solo lo **`firmado`** manda en la tienda.
 
-Los tres eventos del flujo mínimo siguen **`firmado`** y no se reescriben:
+Los tres del flujo mínimo siguen firmados y no se borran:
 
 ```text
 ucjc:identidad:sesion-cambiada@1
@@ -12,40 +12,43 @@ ucjc:descubrimiento:anadir-al-carrito@1
 ucjc:compra:pedido-confirmado@1
 ```
 
-## 1. Evento nuevo (a aceptar)
+## Contrato A — campaña (aceptar o no)
 
-Fichero: [`ucjc-descubrimiento-campana-cambiada@1.md`](ucjc-descubrimiento-campana-cambiada@1.md)
+[`ucjc-descubrimiento-campana-cambiada@1.md`](ucjc-descubrimiento-campana-cambiada@1.md)
 
 ```text
 ucjc:descubrimiento:campana-cambiada@1
 ```
 
-Descubrimiento dice si la campaña `black-friday-2026` está encendida o apagada.  
-Compra y Datos lo escuchan. Identidad puede escucharlo.
+Descubrimiento enciende o apaga Black Friday. Compra y Datos escuchan.
 
-**Aceptación:** firmas en la tabla de responsables de ese fichero.
+**Decisión:** ¿lo firmamos? sí / no / con cambios.
 
-## 2. Campos opcionales (solo si la clase quiere)
+## Contrato B — pedido con moneda (aceptar o no)
 
-Si aceptáis un **cambio menor**, el profesor los añade a los `@1` ya firmados
-(siguen siendo opcionales; quien no los mande no rompe a nadie):
+[`ucjc-compra-pedido-confirmado@2.md`](ucjc-compra-pedido-confirmado@2.md)
 
-| Contrato | Campo | Uso en Black Friday |
-| --- | --- | --- |
-| `anadir-al-carrito@1` | `precioOriginal` (número) | Precio tachado; `precio` es el que se paga |
-| `anadir-al-carrito@1` | `etiqueta` (texto) | Por ejemplo `"black-friday"` |
-| `pedido-confirmado@1` | `campaña` (texto) | Por ejemplo `"black-friday-2026"` |
-| `pedido-confirmado@1` | `moneda` (texto) | `EUR`, `USD` o `GBP`; si falta, euros |
+```text
+ucjc:compra:pedido-confirmado@2
+```
 
-Si preferís **cambio mayor**, esos campos van a un `@2` nuevo.  
-Si preferís **aparcar**, no se añaden.
+Igual que el pedido actual, pero con `moneda` obligatoria (`EUR` / `USD` / `GBP`)
+y `campaña` opcional (`black-friday-2026`).
 
-## 3. Después de aceptar
+**Decisión (elegid una):**
 
-1. El profesor marca `firmado` (o escribe los opcionales en el historial del `@1`).
-2. Cada equipo publica un tag que cumpla lo aceptado.
-3. El viernes 27/11 (Black Friday) se enseña en la tienda con la campaña encendida.
+| Opción | Qué significa |
+| --- | --- |
+| Firmar el `@2` | Compra pasa a emitir `@2` cuando esté listo; Datos escucha `@2`. El `@1` queda para compatibilidad. |
+| Cambio menor en el `@1` | No hay `@2`. Se añaden `moneda` y `campaña` como **opcionales** al `@1` ya firmado. |
+| Aparcar | Ni `@2` ni opcionales. Seguimos solo con euros y sin etiqueta de campaña en el pedido. |
+
+## Después de decidir
+
+1. Firmas en las tablas de los ficheros que aceptéis.
+2. El profesor marca `firmado` (o escribe el cambio menor en el historial del `@1`).
+3. Tags nuevos antes del viernes 27/11.
 
 ## Historial
 
-- `2026-11-23` — Propuesta del profesor en este repositorio.
+- `2026-11-23` — Campaña `@1` y pedido `@2` en `propuesto`.
