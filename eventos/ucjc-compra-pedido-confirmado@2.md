@@ -94,4 +94,4 @@ Igual que en `@1`: `productoId`, `nombre`, `precio`, `cantidad` (todos obligator
 ## Historial
 
 - `2026-11-23` — Propuesta del profesor (Black Friday).
-- `2026-11-23` — PFirma responsable compra.
+- `2026-11-23` — Firma responsable compra.
