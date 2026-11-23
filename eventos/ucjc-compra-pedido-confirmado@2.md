@@ -81,7 +81,7 @@ Igual que en `@1`: `productoId`, `nombre`, `precio`, `cantidad` (todos obligator
 
 | Equipo | Rol | Nombre del responsable | Fecha | Firma / visto bueno |
 | --- | --- | --- | --- | --- |
-| Compra | Emisor | | | |
+| Compra | Emisor | `Adrián Pingarrón` | `2026-11-23`| `OK + próximo release`|
 | Datos A | Consumidor | | | |
 | Datos B | Consumidor | | | |
 
@@ -94,3 +94,4 @@ Igual que en `@1`: `productoId`, `nombre`, `precio`, `cantidad` (todos obligator
 ## Historial
 
 - `2026-11-23` — Propuesta del profesor (Black Friday).
+- `2026-11-23` — PFirma responsable compra.
