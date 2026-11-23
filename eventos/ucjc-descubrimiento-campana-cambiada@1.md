@@ -74,7 +74,7 @@ No cambia `anadir-al-carrito@1` ni `pedido-confirmado@1`.
 | --- | --- | --- | --- | --- |
 | Descubrimiento | Emisor | | | |
 | Compra | Consumidor | | | |
-| Datos A | Consumidor | | | |
+| Datos A | Consumidor | Hans Jefferson Arauco Sanchez| 23/11/2026 | Firmado |
 | Datos B | Consumidor | | | |
 
 ## Estado del contrato
