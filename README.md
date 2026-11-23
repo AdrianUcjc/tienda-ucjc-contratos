@@ -14,7 +14,7 @@ Repositorio central de **contratos de eventos** de la práctica **Tienda UCJC** 
 | Firmados | Los tres del flujo mínimo |
 | Propuestos | [`campana-cambiada@1`](eventos/ucjc-descubrimiento-campana-cambiada@1.md) · [`pedido-confirmado@2`](eventos/ucjc-compra-pedido-confirmado@2.md) |
 | Cómo decidir | [`PROPUESTA-BLACK-FRIDAY.md`](eventos/PROPUESTA-BLACK-FRIDAY.md) |
-| Shell | Tag `v0.2.1` |
+| Shell | Tag **`v0.3.0`** · A/B multi (datos + compra) · https://cesar-andress.github.io/tienda-ucjc-shell/ |
 
 ### Los tres mensajes del flujo mínimo (nombres canónicos)
 
@@ -48,7 +48,7 @@ Nadie programa la tienda entera. Cada equipo posee una pieza y solo esa pieza.
 | **Descubrimiento** | Catálogo de productos, búsqueda y ficha. |
 | **Compra** | Carrito y proceso de compra. |
 | **Identidad** | Usuario y sesión. |
-| **Datos** | Pedidos y persistencia simulada (variantes A/B en el mismo hueco del shell). |
+| **Datos** | Pedidos y persistencia simulada (variantes A/B en el shell; query `?datos=a|b`). |
 
 Los equipos **no** pueden abrir ni importar el código de otro micro-frontend. La única referencia compartida entre piezas son los contratos aprobados en este repositorio.
 
