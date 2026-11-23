@@ -14,7 +14,7 @@ Repositorio central de **contratos de eventos** de la práctica **Tienda UCJC** 
 | Firmados | Los tres del flujo mínimo |
 | Propuestos | [`campana-cambiada@1`](eventos/ucjc-descubrimiento-campana-cambiada@1.md) · [`pedido-confirmado@2`](eventos/ucjc-compra-pedido-confirmado@2.md) |
 | Cómo decidir | [`PROPUESTA-BLACK-FRIDAY.md`](eventos/PROPUESTA-BLACK-FRIDAY.md) |
-| Shell | Tag **`v0.3.0`** · A/B multi (datos + compra) · https://cesar-andress.github.io/tienda-ucjc-shell/ |
+| Shell | Tag **`v0.3.1`** · A/B multi (identidad + datos + compra) · https://cesar-andress.github.io/tienda-ucjc-shell/ |
 
 ### Los tres mensajes del flujo mínimo (nombres canónicos)
 
