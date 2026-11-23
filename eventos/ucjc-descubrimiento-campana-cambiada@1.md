@@ -1,10 +1,5 @@
 # Contrato: `ucjc:descubrimiento:campana-cambiada@1`
 
-> **Estado: `propuesto` (23/11/2026).**  
-> Borrador del profesor para el corte Black Friday (viernes 27/11).  
-> **No implementar todavía** como referencia: primero OK en clase (miércoles 25/11) y firmas de emisor + consumidores.  
-> Los tres contratos del flujo mínimo `@1` **no** se tocan.
-
 ## Nombre del evento
 
 ```text
@@ -22,34 +17,33 @@ Nombre de fichero: `ucjc-descubrimiento-campana-cambiada@1.md`
 
 ## Equipo emisor
 
-**Descubrimiento** (dueño del catálogo y de las ofertas visibles)
+**Descubrimiento**
 
 ## Equipos consumidores
 
-- **Compra** (badge / mensaje en el carrito; no cambia el nombre de `pedido-confirmado@1`)
-- **Datos** (variantes A y B: pueden etiquetar pedidos hechos durante la campaña)
-- **Identidad** (opcional: mensaje de bienvenida; no es obligatorio para el flujo)
+- **Compra**
+- **Datos** (variante A y variante B)
+- **Identidad** (opcional)
 
 ## Descripción
 
-Descubrimiento emite este evento cuando **activa o desactiva** una campaña comercial del catálogo (p. ej. Black Friday 2026).  
-Lo emite:
+Descubrimiento emite este evento cuando enciende o apaga una campaña del catálogo
+(por ejemplo Black Friday). También lo emite una vez al cargar la pieza, con el
+estado actual, para quien entre después.
 
-1. al cargar la pieza, con el estado actual de la campaña (para quien llegue tarde),
-2. cada vez que la campaña pasa de inactiva a activa o al revés (botón de demo / horario).
-
-Quien escucha actualiza su UI. **No** sustituye a `anadir-al-carrito@1` ni a `pedido-confirmado@1`: solo informa del contexto de campaña.
+Quien escucha actualiza lo que muestra. Este evento no sustituye a
+`anadir-al-carrito@1` ni a `pedido-confirmado@1`.
 
 ## Campos y tipos (`event.detail`)
 
 | Campo | Tipo | Obligatorio / opcional | Descripción |
 | --- | --- | --- | --- |
-| `activa` | booleano | obligatorio | `true` si la campaña está en vigor ahora. |
-| `codigo` | texto | obligatorio | Identificador estable de la campaña (`black-friday-2026`). Sin espacios. |
-| `etiqueta` | texto | obligatorio | Texto corto para mostrar («Black Friday UCJC»). |
-| `momento` | texto (ISO 8601) | obligatorio | Instantánea en la que se anuncia este estado. |
-| `descuentoPct` | número | opcional | Porcentaje orientativo de descuento de escaparate (0–100). No obliga a Compra a recalcular. |
-| `hasta` | texto (ISO 8601) | opcional | Fin previsto de la campaña. Si no viene, la pieza emisora no promete fecha. |
+| `activa` | booleano | obligatorio | `true` si la campaña está encendida. |
+| `codigo` | texto | obligatorio | Identificador de la campaña, sin espacios (`black-friday-2026`). |
+| `etiqueta` | texto | obligatorio | Texto corto para pantalla («Black Friday UCJC»). |
+| `momento` | texto (ISO 8601) | obligatorio | Cuándo se anuncia este estado. |
+| `descuentoPct` | número | opcional | Descuento de escaparate (0–100). Orientativo. |
+| `hasta` | texto (ISO 8601) | opcional | Cuándo termina la campaña. |
 
 ## Campos obligatorios y opcionales
 
@@ -57,8 +51,6 @@ Quien escucha actualiza su UI. **No** sustituye a `anadir-al-carrito@1` ni a `pe
 - **Opcionales:** `descuentoPct`, `hasta`
 
 ## Ejemplo de payload
-
-Campaña Black Friday encendida:
 
 ```json
 {
@@ -71,8 +63,6 @@ Campaña Black Friday encendida:
 }
 ```
 
-Campaña apagada:
-
 ```json
 {
   "activa": false,
@@ -82,31 +72,22 @@ Campaña apagada:
 }
 ```
 
-## Qué hace cada pieza (si se firma)
-
-| Pieza | Comportamiento esperado |
-| --- | --- |
-| Descubrimiento | Emite al cargar y al conmutar. Puede marcar productos en oferta en su UI. |
-| Compra | Si `activa`, muestra la `etiqueta` cerca del carrito. Sigue emitiendo `pedido-confirmado@1`. |
-| Datos A/B | Pueden guardar `codigo` de campaña junto al pedido **solo** si también se acepta el campo opcional `campaña` en `pedido-confirmado` (ver `PROPUESTA-BLACK-FRIDAY.md`). |
-| Identidad | Opcional: una línea de texto bajo el login. |
-
 ## Responsables que aprueban
 
 | Equipo | Rol | Nombre del responsable | Fecha | Firma / visto bueno |
 | --- | --- | --- | --- | --- |
-| Descubrimiento | Emisor | |  | pendiente clase 25/11 |
-| Compra | Consumidor | |  | pendiente |
-| Datos A | Consumidor | |  | pendiente |
-| Datos B | Consumidor | |  | pendiente |
-| Identidad | Consumidor (opcional) | |  | pendiente |
+| Descubrimiento | Emisor | | | |
+| Compra | Consumidor | | | |
+| Datos A | Consumidor | | | |
+| Datos B | Consumidor | | | |
+| Identidad | Consumidor (opcional) | | | |
 
 ## Estado del contrato
 
-- [x] `propuesto`
+- [x] `propuesto` — lo pone el profesor; hace falta el OK de los responsables en clase
 - [ ] `firmado`
 - [ ] `deprecado`
 
 ## Historial
 
-- `2026-11-23` — Borrador del profesor para el corte Black Friday (27/11): campaña como evento nuevo, sin mutar los tres `@1` firmados.
+- `2026-11-23` — Propuesta del profesor para Black Friday (27/11). No cambia los tres `@1` ya firmados.

@@ -1,15 +1,13 @@
 # Carpeta `eventos/`
 
-Aquí viven los contratos de la tienda (un fichero Markdown por evento) y las propuestas de aula.
+Un fichero Markdown por evento. Si no está en `main`, no cuenta para la tienda.
 
-- Repositorio **público**. Si el fichero no está en esta carpeta de `main`, **no cuenta** para la tienda.
-- Hoy (**23/11/2026**, tag del repo **`v0.2.1`**): los tres del flujo mínimo siguen **`firmado`**. Hay propuestas **Black Friday** en estado `propuesto` (no implementar hasta firmar en clase).
-- Mapa del camino punta a punta: [`FLUJO-MINIMO.md`](FLUJO-MINIMO.md).
-- Paquete Black Friday: [`PROPUESTA-BLACK-FRIDAY.md`](PROPUESTA-BLACK-FRIDAY.md).
-- El [ejemplo de formato](EJEMPLO-como-rellenar.md) sigue siendo solo plantilla (**no implementar**).
-- No dejéis borradores en la **raíz** del repositorio. No mutéis un `@1` firmado sin voto de clase: proponer versión nueva, evento nuevo, o campos opcionales documentados.
+- Tag del repo (**23/11/2026**): **`v0.2.2`**
+- Flujo mínimo: tres contratos **`firmado`** — [`FLUJO-MINIMO.md`](FLUJO-MINIMO.md)
+- Black Friday: el profesor propone; los equipos aceptan en clase — [`PROPUESTA-BLACK-FRIDAY.md`](PROPUESTA-BLACK-FRIDAY.md)
+- Ejemplo de formato (no implementar): [`EJEMPLO-como-rellenar.md`](EJEMPLO-como-rellenar.md)
 
-## Contratos activos (`firmado`)
+## Firmados
 
 | Evento | Fichero |
 | --- | --- |
@@ -17,16 +15,15 @@ Aquí viven los contratos de la tienda (un fichero Markdown por evento) y las pr
 | `ucjc:descubrimiento:anadir-al-carrito@1` | [`ucjc-descubrimiento-anadir-al-carrito@1.md`](ucjc-descubrimiento-anadir-al-carrito@1.md) |
 | `ucjc:compra:pedido-confirmado@1` | [`ucjc-compra-pedido-confirmado@1.md`](ucjc-compra-pedido-confirmado@1.md) |
 
-## Propuestas (`propuesto`) — Black Friday 27/11
+## Propuestos (Black Friday)
 
-| Evento / doc | Fichero | Notas |
-| --- | --- | --- |
-| `ucjc:descubrimiento:campana-cambiada@1` | [`ucjc-descubrimiento-campana-cambiada@1.md`](ucjc-descubrimiento-campana-cambiada@1.md) | Campaña on/off (emite Descubrimiento) |
-| Paquete BF + moneda / ofertas | [`PROPUESTA-BLACK-FRIDAY.md`](PROPUESTA-BLACK-FRIDAY.md) | Voto 25/11: menor / mayor / aparcar |
+| Evento / nota | Fichero |
+| --- | --- |
+| `ucjc:descubrimiento:campana-cambiada@1` | [`ucjc-descubrimiento-campana-cambiada@1.md`](ucjc-descubrimiento-campana-cambiada@1.md) |
+| Cómo aceptarlos | [`PROPUESTA-BLACK-FRIDAY.md`](PROPUESTA-BLACK-FRIDAY.md) |
 
-## Cómo proponer un contrato nuevo
+## Cómo proponer otro contrato
 
 1. Copiad [`../PLANTILLA-EVENTO.md`](../PLANTILLA-EVENTO.md).
-2. Mirad el ejemplo: [`EJEMPLO-como-rellenar.md`](EJEMPLO-como-rellenar.md) (**no implementar**).
-3. Guardad el fichero aquí, p. ej. `ucjc-descubrimiento-anadir-al-carrito@2.md`.
-4. Abrid un Pull Request. El profesor fusiona a `main` cuando el estado sea `firmado` (o deja `propuesto` visible para negociar en clase).
+2. Dejad estado `propuesto`.
+3. Pull Request al original. El profesor pasa a `firmado` cuando haya OK de emisor y consumidores.
