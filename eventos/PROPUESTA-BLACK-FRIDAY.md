@@ -1,54 +1,40 @@
-# Black Friday — qué propone el profesor (27/11/2026)
+# Black Friday — propuestas del profesor (27/11/2026)
 
-El profesor deja contratos en **`propuesto`**.  
-En clase **decidís** y, si hay acuerdo, firmáis la tabla de responsables.  
-Solo lo **`firmado`** manda en la tienda.
+Dos ficheros en **`propuesto`**. En clase decidís. Si aceptáis, firmáis la tabla.
+Hasta que no esté **`firmado`**, no cuenta.
 
-Los tres del flujo mínimo siguen firmados y no se borran:
+El flujo mínimo (`@1`) no se borra.
 
-```text
-ucjc:identidad:sesion-cambiada@1
-ucjc:descubrimiento:anadir-al-carrito@1
-ucjc:compra:pedido-confirmado@1
-```
+## Quién toca qué
 
-## Contrato A — campaña (aceptar o no)
+| Equipo | Contrato A (campaña) | Contrato B (pedido `@2`) |
+| --- | --- | --- |
+| Identidad | No | No |
+| Descubrimiento | Emite (botón on/off) | No |
+| Compra | Escucha (un texto) | Emite el `@2` |
+| Datos A / B | Escuchan (un texto) | Escuchan el `@2` |
+
+La A es sencilla.  
+La B es la que puede costar: Compra y las dos Datos tienen que ir a la vez.
+
+## A — `campana-cambiada@1`
 
 [`ucjc-descubrimiento-campana-cambiada@1.md`](ucjc-descubrimiento-campana-cambiada@1.md)
 
-```text
-ucjc:descubrimiento:campana-cambiada@1
-```
+¿Lo firmamos? sí / no / con cambios.
 
-Descubrimiento enciende o apaga Black Friday. Compra y Datos escuchan.
-
-**Decisión:** ¿lo firmamos? sí / no / con cambios.
-
-## Contrato B — pedido con moneda (aceptar o no)
+## B — `pedido-confirmado@2`
 
 [`ucjc-compra-pedido-confirmado@2.md`](ucjc-compra-pedido-confirmado@2.md)
 
-```text
-ucjc:compra:pedido-confirmado@2
-```
+Elegid **una**:
 
-Igual que el pedido actual, pero con `moneda` obligatoria (`EUR` / `USD` / `GBP`)
-y `campaña` opcional (`black-friday-2026`).
-
-**Decisión (elegid una):**
-
-| Opción | Qué significa |
-| --- | --- |
-| Firmar el `@2` | Compra pasa a emitir `@2` cuando esté listo; Datos escucha `@2`. El `@1` queda para compatibilidad. |
-| Cambio menor en el `@1` | No hay `@2`. Se añaden `moneda` y `campaña` como **opcionales** al `@1` ya firmado. |
-| Aparcar | Ni `@2` ni opcionales. Seguimos solo con euros y sin etiqueta de campaña en el pedido. |
-
-## Después de decidir
-
-1. Firmas en las tablas de los ficheros que aceptéis.
-2. El profesor marca `firmado` (o escribe el cambio menor en el historial del `@1`).
-3. Tags nuevos antes del viernes 27/11.
+| Opción | Esfuerzo | Qué pasa |
+| --- | --- | --- |
+| Firmar el `@2` | Alto | Compra emite `@2`; Datos escuchan `@2`. |
+| Cambio menor en el `@1` | Bajo | No hay `@2`. En el `@1` se añaden `moneda` y `campaña` **opcionales**. Quien no los mande sigue igual. |
+| Aparcar | Ninguno | Seguimos solo con euros. |
 
 ## Historial
 
-- `2026-11-23` — Campaña `@1` y pedido `@2` en `propuesto`.
+- `2026-11-23` — A y B en `propuesto`; Identidad fuera; A simplificada.

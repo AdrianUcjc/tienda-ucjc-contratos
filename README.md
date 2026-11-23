@@ -5,11 +5,11 @@ Repositorio central de **contratos de eventos** de la práctica **Tienda UCJC** 
 **Repositorio (público):** https://github.com/cesar-andress/tienda-ucjc-contratos  
 **Shell en vivo:** https://cesar-andress.github.io/tienda-ucjc-shell/
 
-## Situación actual (23/11/2026) · tag `v0.2.3`
+## Situación actual (23/11/2026) · tag `v0.2.4`
 
 | Hecho | Estado |
 | --- | --- |
-| Tag / release | **`v0.2.3`** — `@1` firmados + dos propuestas BF |
+| Tag / release | **`v0.2.4`** — `@1` firmados + dos propuestas BF (Identidad fuera) |
 | Este repositorio | **Público** (escritura solo el profesor) |
 | Firmados | Los tres del flujo mínimo |
 | Propuestos | [`campana-cambiada@1`](eventos/ucjc-descubrimiento-campana-cambiada@1.md) · [`pedido-confirmado@2`](eventos/ucjc-compra-pedido-confirmado@2.md) |

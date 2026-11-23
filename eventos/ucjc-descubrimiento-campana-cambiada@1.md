@@ -22,33 +22,31 @@ Nombre de fichero: `ucjc-descubrimiento-campana-cambiada@1.md`
 ## Equipos consumidores
 
 - **Compra**
-- **Datos** (variante A y variante B)
-- **Identidad** (opcional)
+- **Datos** (A y B)
+
+Identidad no interviene.
 
 ## Descripción
 
-Descubrimiento emite este evento cuando enciende o apaga una campaña del catálogo
-(por ejemplo Black Friday). También lo emite una vez al cargar la pieza, con el
-estado actual, para quien entre después.
+Descubrimiento avisa cuando Black Friday (u otra campaña) se enciende o se apaga.
+También avisa al cargar la pieza, con el estado actual.
 
-Quien escucha actualiza lo que muestra. Este evento no sustituye a
-`anadir-al-carrito@1` ni a `pedido-confirmado@1`.
+Compra y Datos solo tienen que enterarse (por ejemplo, mostrar u ocultar un texto).
+No cambia `anadir-al-carrito@1` ni `pedido-confirmado@1`.
 
 ## Campos y tipos (`event.detail`)
 
 | Campo | Tipo | Obligatorio / opcional | Descripción |
 | --- | --- | --- | --- |
 | `activa` | booleano | obligatorio | `true` si la campaña está encendida. |
-| `codigo` | texto | obligatorio | Identificador de la campaña, sin espacios (`black-friday-2026`). |
-| `etiqueta` | texto | obligatorio | Texto corto para pantalla («Black Friday UCJC»). |
-| `momento` | texto (ISO 8601) | obligatorio | Cuándo se anuncia este estado. |
-| `descuentoPct` | número | opcional | Descuento de escaparate (0–100). Orientativo. |
-| `hasta` | texto (ISO 8601) | opcional | Cuándo termina la campaña. |
+| `codigo` | texto | obligatorio | p. ej. `black-friday-2026` |
+| `etiqueta` | texto | obligatorio | Texto en pantalla, p. ej. `Black Friday UCJC` |
+| `momento` | texto (ISO 8601) | obligatorio | Cuándo se anuncia. |
 
 ## Campos obligatorios y opcionales
 
 - **Obligatorios:** `activa`, `codigo`, `etiqueta`, `momento`
-- **Opcionales:** `descuentoPct`, `hasta`
+- **Opcionales:** ninguno
 
 ## Ejemplo de payload
 
@@ -57,9 +55,7 @@ Quien escucha actualiza lo que muestra. Este evento no sustituye a
   "activa": true,
   "codigo": "black-friday-2026",
   "etiqueta": "Black Friday UCJC",
-  "momento": "2026-11-27T09:00:00+01:00",
-  "descuentoPct": 20,
-  "hasta": "2026-11-28T00:00:00+01:00"
+  "momento": "2026-11-27T09:00:00+01:00"
 }
 ```
 
@@ -80,14 +76,14 @@ Quien escucha actualiza lo que muestra. Este evento no sustituye a
 | Compra | Consumidor | | | |
 | Datos A | Consumidor | | | |
 | Datos B | Consumidor | | | |
-| Identidad | Consumidor (opcional) | | | |
 
 ## Estado del contrato
 
-- [x] `propuesto` — lo pone el profesor; hace falta el OK de los responsables en clase
+- [x] `propuesto`
 - [ ] `firmado`
 - [ ] `deprecado`
 
 ## Historial
 
-- `2026-11-23` — Propuesta del profesor para Black Friday (27/11). No cambia los tres `@1` ya firmados.
+- `2026-11-23` — Propuesta del profesor (Black Friday).
+- `2026-11-23` — Campos reducidos a cuatro; Identidad fuera.

@@ -31,7 +31,7 @@ Nada más entra en el paquete `@1`. Listados de usuarios, stock inverso Compra�
 
 Además, para entrar en el shell: `remote.js` + `export default` + Pages HTTPS (ver contrato de carga del shell). Eso es **release**, no contrato.
 
-## Estado (23/11/2026) · tag contratos `v0.2.3`
+## Estado (23/11/2026) · tag contratos `v0.2.4`
 
 1. Los tres ficheros del flujo mínimo siguen **`firmado`**.
 2. Black Friday en `propuesto` (la clase decide):

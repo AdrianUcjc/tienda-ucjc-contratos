@@ -2,7 +2,7 @@
 
 Un fichero Markdown por evento. Si no está en `main`, no cuenta para la tienda.
 
-- Tag del repo (**23/11/2026**): **`v0.2.3`**
+- Tag del repo (**23/11/2026**): **`v0.2.4`**
 - Flujo mínimo: tres contratos **`firmado`** — [`FLUJO-MINIMO.md`](FLUJO-MINIMO.md)
 - Black Friday: el profesor propone; los equipos aceptan en clase — [`PROPUESTA-BLACK-FRIDAY.md`](PROPUESTA-BLACK-FRIDAY.md)
 - Ejemplo de formato (no implementar): [`EJEMPLO-como-rellenar.md`](EJEMPLO-como-rellenar.md)

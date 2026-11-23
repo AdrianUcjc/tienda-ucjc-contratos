@@ -13,7 +13,7 @@ Nombre de fichero: `ucjc-compra-pedido-confirmado@2.md`
 | Campo | Valor |
 | --- | --- |
 | Versión del contrato del evento | `2` |
-| ¿Sustituye a una versión anterior? | sí: `ucjc:compra:pedido-confirmado@1` (el `@1` sigue válido hasta que la clase diga lo contrario) |
+| ¿Sustituye a una versión anterior? | sí: `ucjc:compra:pedido-confirmado@1` |
 
 ## Equipo emisor
 
@@ -21,36 +21,35 @@ Nombre de fichero: `ucjc-compra-pedido-confirmado@2.md`
 
 ## Equipos consumidores
 
-- **Datos** (variante A)
-- **Datos** (variante B)
+- **Datos** (A y B)
+
+Descubrimiento e Identidad no intervienen.
 
 ## Descripción
 
-Igual que el `@1`: Compra lo emite al confirmar el pedido; Datos lo guarda y lo muestra.  
-En el `@2` el pedido lleva **moneda** y, si aplica, el **código de campaña** (Black Friday u otra).
+Como el `@1`, pero el pedido lleva `moneda` y puede llevar `campaña`.
 
-Mientras este contrato esté solo `propuesto`, Compra debe seguir emitiendo el `@1`.
+Ojo: firmar el `@2` obliga a Compra y a las dos Datos a cambiar a la vez.
+Si preferís algo más suave, en clase podéis elegir el **cambio menor** del `@1`
+(ver `PROPUESTA-BLACK-FRIDAY.md`) en lugar de este fichero.
+
+Mientras esté `propuesto`, Compra sigue emitiendo el `@1`.
 
 ## Campos y tipos (`event.detail`)
 
 | Campo | Tipo | Obligatorio / opcional | Descripción |
 | --- | --- | --- | --- |
-| `pedidoId` | texto | obligatorio | Id del pedido, lo genera Compra. |
-| `usuarioId` | texto | obligatorio | Usuario que confirma (el de la sesión). |
-| `creadoEn` | texto (ISO 8601) | obligatorio | Instantánea de la confirmación. |
-| `total` | número | obligatorio | Importe total en la moneda de `moneda`. |
-| `lineas` | lista de objetos | obligatorio | Líneas del pedido. |
-| `moneda` | texto | obligatorio | `EUR`, `USD` o `GBP`. Un solo pedido, una sola moneda. |
-| `campaña` | texto | opcional | Código de campaña (`black-friday-2026`). Si no hay campaña, no se manda. |
+| `pedidoId` | texto | obligatorio | Lo genera Compra. |
+| `usuarioId` | texto | obligatorio | Usuario de la sesión. |
+| `creadoEn` | texto (ISO 8601) | obligatorio | Momento de la confirmación. |
+| `total` | número | obligatorio | Total en la moneda del pedido. |
+| `lineas` | lista | obligatorio | Igual que en el `@1`. |
+| `moneda` | texto | obligatorio | `EUR`, `USD` o `GBP`. |
+| `campaña` | texto | opcional | p. ej. `black-friday-2026` |
 
 ### Elementos de `lineas[]`
 
-| Campo | Tipo | Obligatorio / opcional | Descripción |
-| --- | --- | --- | --- |
-| `productoId` | texto | obligatorio | Id de producto. |
-| `nombre` | texto | obligatorio | Nombre para mostrar. |
-| `precio` | número | obligatorio | Precio unitario en la moneda del pedido. |
-| `cantidad` | número | obligatorio | Unidades (≥ 1). |
+Igual que en `@1`: `productoId`, `nombre`, `precio`, `cantidad` (todos obligatorios).
 
 ## Campos obligatorios y opcionales
 
@@ -88,10 +87,10 @@ Mientras este contrato esté solo `propuesto`, Compra debe seguir emitiendo el `
 
 ## Estado del contrato
 
-- [x] `propuesto` — el profesor lo pone; la clase decide si se acepta
+- [x] `propuesto`
 - [ ] `firmado`
 - [ ] `deprecado`
 
 ## Historial
 
-- `2026-11-23` — Propuesta del profesor para Black Friday: pedido con moneda y campaña.
+- `2026-11-23` — Propuesta del profesor (Black Friday).
