@@ -1,7 +1,7 @@
 # Black Friday — propuestas del profesor (27/11/2026)
 
-Dos ficheros en **`propuesto`**. En clase decidís. Si aceptáis, firmáis la tabla.
-Hasta que no esté **`firmado`**, no cuenta.
+`campana-cambiada@1` ya está **`firmado`** (PR #1 · Descubrimiento, 23/11).  
+Sigue en **`propuesto`**: `pedido-confirmado@2`. Hasta que no esté **`firmado`**, no cuenta.
 
 El flujo mínimo (`@1`) no se borra.
 
@@ -17,11 +17,11 @@ El flujo mínimo (`@1`) no se borra.
 La A es sencilla.  
 La B es la que puede costar: Compra y las dos Datos tienen que ir a la vez.
 
-## A — `campana-cambiada@1`
+## A — `campana-cambiada@1` · **firmado**
 
 [`ucjc-descubrimiento-campana-cambiada@1.md`](ucjc-descubrimiento-campana-cambiada@1.md)
 
-¿Lo firmamos? sí / no / con cambios.
+Firmado vía PR #1 (dani84mol / Descubrimiento). Compra y Datos deben escucharlo.
 
 ## B — `pedido-confirmado@2`
 
@@ -38,3 +38,4 @@ Elegid **una**:
 ## Historial
 
 - `2026-11-23` — A y B en `propuesto`; Identidad fuera; A simplificada.
+- `2026-11-23` — A (`campana-cambiada@1`) → **`firmado`** (merge PR #1).

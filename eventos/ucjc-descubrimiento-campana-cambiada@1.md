@@ -87,3 +87,4 @@ No cambia `anadir-al-carrito@1` ni `pedido-confirmado@1`.
 
 - `2026-11-23` — Propuesta del profesor (Black Friday).
 - `2026-11-23` — Campos reducidos a cuatro; Identidad fuera.
+- `2026-11-23` — Estado → **`firmado`** (PR #1 · dani84mol / Descubrimiento).

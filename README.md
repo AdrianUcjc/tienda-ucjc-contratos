@@ -5,16 +5,16 @@ Repositorio central de **contratos de eventos** de la práctica **Tienda UCJC** 
 **Repositorio (público):** https://github.com/cesar-andress/tienda-ucjc-contratos  
 **Shell en vivo:** https://cesar-andress.github.io/tienda-ucjc-shell/
 
-## Situación actual (23/11/2026) · tag `v0.2.4`
+## Situación actual (23/11/2026) · tag `v0.2.5`
 
 | Hecho | Estado |
 | --- | --- |
-| Tag / release | **`v0.2.4`** — `@1` firmados + dos propuestas BF (Identidad fuera) |
+| Tag / release | **`v0.2.5`** — flujo mínimo + `campana-cambiada@1` **firmado** (PR #1 Descubrimiento) |
 | Este repositorio | **Público** (escritura solo el profesor) |
-| Firmados | Los tres del flujo mínimo |
-| Propuestos | [`campana-cambiada@1`](eventos/ucjc-descubrimiento-campana-cambiada@1.md) · [`pedido-confirmado@2`](eventos/ucjc-compra-pedido-confirmado@2.md) |
-| Cómo decidir | [`PROPUESTA-BLACK-FRIDAY.md`](eventos/PROPUESTA-BLACK-FRIDAY.md) |
-| Shell | Tag **`v0.3.1`** · A/B multi (identidad + datos + compra) · https://cesar-andress.github.io/tienda-ucjc-shell/ |
+| Firmados | Flujo mínimo `@1` + [`campana-cambiada@1`](eventos/ucjc-descubrimiento-campana-cambiada@1.md) |
+| Propuestos | [`pedido-confirmado@2`](eventos/ucjc-compra-pedido-confirmado@2.md) |
+| Cómo decidir el `@2` | [`PROPUESTA-BLACK-FRIDAY.md`](eventos/PROPUESTA-BLACK-FRIDAY.md) |
+| Shell | Tag **`v0.3.2`** · A/B multi · https://cesar-andress.github.io/tienda-ucjc-shell/ |
 
 ### Los tres mensajes del flujo mínimo (nombres canónicos)
 
@@ -29,12 +29,12 @@ ucjc:compra:pedido-confirmado@1
 | `sesion-cambiada@1` | [`eventos/ucjc-identidad-sesion-cambiada@1.md`](eventos/ucjc-identidad-sesion-cambiada@1.md) | `firmado` |
 | `anadir-al-carrito@1` | [`eventos/ucjc-descubrimiento-anadir-al-carrito@1.md`](eventos/ucjc-descubrimiento-anadir-al-carrito@1.md) | `firmado` |
 | `pedido-confirmado@1` | [`eventos/ucjc-compra-pedido-confirmado@1.md`](eventos/ucjc-compra-pedido-confirmado@1.md) | `firmado` |
-| `campana-cambiada@1` | [`eventos/ucjc-descubrimiento-campana-cambiada@1.md`](eventos/ucjc-descubrimiento-campana-cambiada@1.md) | `propuesto` |
+| `campana-cambiada@1` | [`eventos/ucjc-descubrimiento-campana-cambiada@1.md`](eventos/ucjc-descubrimiento-campana-cambiada@1.md) | `firmado` |
 | `pedido-confirmado@2` | [`eventos/ucjc-compra-pedido-confirmado@2.md`](eventos/ucjc-compra-pedido-confirmado@2.md) | `propuesto` |
 
 El `@1` / `@2` es la versión del **contrato del evento**. No es lo mismo que el tag de la pieza (`v0.2.0`, `v1.0.0`, …).
 
-**Black Friday (27/11):** dos propuestas; en clase decidís y firmáis. Ver [`PROPUESTA-BLACK-FRIDAY.md`](eventos/PROPUESTA-BLACK-FRIDAY.md).
+**Black Friday (27/11):** `campana-cambiada@1` ya **firmado** (PR #1). Queda decidir `pedido-confirmado@2`. Ver [`PROPUESTA-BLACK-FRIDAY.md`](eventos/PROPUESTA-BLACK-FRIDAY.md).
 ## Qué es Tienda UCJC
 
 Tienda UCJC es una tienda web de campus construida por cuatro equipos independientes. Cada equipo desarrolla y publica su propio micro-frontend. El shell del profesor los carga en tiempo de ejecución.
