@@ -20,7 +20,7 @@ No es un evento del bus. Es el contrato de estilo y script comunes que impone el
 El profesor, desde el shell. Ficheros:
 
 - `comun/campus.css`: variables `--ucjc-*` en `:root` y clases `.ucjc-btn`, `.ucjc-btn-primary`, `.ucjc-label`, `.ucjc-title`.
-- `comun/campus.js`: `window.ucjcCampus` (`emitir`, `escuchar`, `leerTokens`, `version`).
+- `comun/campus.js`: `window.ucjcCampus` (`emitir`, `escuchar`, `leerTokens`, `adoptar`, `version`).
 
 En la tienda en vivo:
 
@@ -82,12 +82,14 @@ Si falta una variable que necesitáis, se pide por PR a este contrato. No se inv
 
 ### Nota técnica sobre las clases
 
-Las clases `.ucjc-*` viven en la hoja del documento y no entran en el Shadow DOM. Dentro de vuestra pieza no se aplican: usad las variables, que sí se heredan.
+Las variables `--ucjc-*` se heredan y atraviesan el Shadow DOM: con ellas basta para unificar color, tipografía, radios y espacios.
+
+Las clases `.ucjc-*` no atraviesan el Shadow DOM. Si queréis usar `.ucjc-btn`, `.ucjc-label` o `.ucjc-title` dentro de la pieza, llamad a `ucjcCampus.adoptar(this.shadowRoot)` al montar (por ejemplo en `connectedCallback`). Eso entrega `campus.css` a vuestra sombra. Sin `adoptar()`, las clases no pintan nada dentro del Shadow DOM.
 
 ## Qué no obliga
 
 - El diseño interno de la pieza (rejillas, modales, animaciones).
-- Usar las clases `.ucjc-*`.
+- Usar las clases `.ucjc-*` (opcionales; si las usáis, con `adoptar()`).
 - Usar Shadow DOM (recomendado; hoy lo usan las diez variantes).
 - Campos nuevos en eventos: eso va en los contratos de `eventos/`.
 
@@ -121,7 +123,11 @@ class UcjcCompra extends HTMLElement {
   #quitar = null;
 
   connectedCallback() {
+    if (!this.shadowRoot) this.attachShadow({ mode: 'open' });
     if (window.ucjcCampus?.version !== '1') console.warn('[compra] sin campus');
+    // Solo si usáis .ucjc-btn / .ucjc-label / .ucjc-title:
+    window.ucjcCampus?.adoptar?.(this.shadowRoot);
+
     const alCambiar = (e) => this.#pintarCampana(e.detail);
     this.#quitar = window.ucjcCampus
       ? window.ucjcCampus.escuchar(EV_CAMPANA, alCambiar)
@@ -165,3 +171,4 @@ Una fila por variante. La release es el tag que demuestra la conformidad.
 - `2026-11-25` — Propuesta del profesor: estilo y script comunes desde el shell; firman los cuatro equipos.
 - `2026-11-25` — API en español (`emitir` / `escuchar` / `leerTokens`).
 - `2026-11-25` — Firma por variante, fechas de entrada en vigor, valores de reserva, sin `!important`, listeners que se quitan, un test por evento emitido; ejemplo sin colores escritos a mano; nota sobre las clases y el Shadow DOM.
+- `2026-11-25` — `ucjcCampus.adoptar(shadowRoot)` para usar `.ucjc-*` dentro del Shadow DOM (transparencias 25/11).
