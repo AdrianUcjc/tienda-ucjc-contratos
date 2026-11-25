@@ -31,12 +31,13 @@ Nada m谩s entra en el paquete `@1`. Listados de usuarios, stock inverso Compra鈫
 
 Adem谩s, para entrar en el shell: `remote.js` + `export default` + Pages HTTPS (ver contrato de carga del shell). Eso es **release**, no contrato.
 
-## Estado (23/11/2026) 路 tag contratos `v0.2.5`
+## Estado (25/11/2026) 路 tag contratos `v0.2.7`
 
 1. Los tres ficheros del flujo m铆nimo siguen **`firmado`**.
-2. [`campana-cambiada@1`](ucjc-descubrimiento-campana-cambiada@1.md) pasa a **`firmado`** (PR #1 路 Descubrimiento).
-3. Sigue en `propuesto`: [`pedido-confirmado@2`](ucjc-compra-pedido-confirmado@2.md).
+2. [`campana-cambiada@1`](ucjc-descubrimiento-campana-cambiada@1.md) **`firmado`**.
+3. En `propuesto` (mesa): [`pedido-confirmado@2`](ucjc-compra-pedido-confirmado@2.md) y
+   [`moneda-cambiada@1`](ucjc-descubrimiento-moneda-cambiada@1.md).
    Ver [`PROPUESTA-BLACK-FRIDAY.md`](PROPUESTA-BLACK-FRIDAY.md).
-4. Shell en vivo: tag **`v0.3.2`** (A/B multi: identidad + datos + compra).  
-   Nota: Datos A `v0.2.4` escucha solo `pedido-confirmado@2` (`propuesto`); con Compra en `@1`, `?datos=a` no recibe pedidos nuevos.  
-   Identidad B: `ucjc-identidad-plus` `v0.3.0` (`?identidad=b`).
+4. Presentaci贸n: [`../presentacion/ucjc-presentacion-campus@1.md`](../presentacion/ucjc-presentacion-campus@1.md) **`propuesto`** (firma por variante el 30/11).
+5. Shell en vivo: tag **`v0.3.10`**.  
+   Nota: Datos A escucha `pedido-confirmado@2`; con Compra en `@1`, `?datos=a` puede no ver pedidos nuevos.
