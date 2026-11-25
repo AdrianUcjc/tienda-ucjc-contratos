@@ -1,41 +1,64 @@
-# Black Friday — propuestas del profesor (27/11/2026)
+# Black Friday — mesa de hoy (25/11/2026) → demo 27/11
 
-`campana-cambiada@1` ya está **`firmado`** (PR #1 · Descubrimiento, 23/11).  
-Sigue en **`propuesto`**: `pedido-confirmado@2`. Hasta que no esté **`firmado`**, no cuenta.
+`campana-cambiada@1` ya está **`firmado`**.  
+Siguen en **`propuesto`** (hoy se decide): `pedido-confirmado@2` y **`moneda-cambiada@1`** (nuevo).
 
 El flujo mínimo (`@1`) no se borra.
 
 ## Quién toca qué
 
-| Equipo | Contrato A (campaña) | Contrato B (pedido `@2`) |
-| --- | --- | --- |
-| Identidad | No | No |
-| Descubrimiento | Emite (botón on/off) | No |
-| Compra | Escucha (un texto) | Emite el `@2` |
-| Datos A / B | Escuchan (un texto) | Escuchan el `@2` |
+| Equipo | Campaña (firmado) | Pedido `@2` | Moneda (nuevo) |
+| --- | --- | --- | --- |
+| Identidad | No | No | No |
+| Descubrimiento | Emite | No | Emite |
+| Compra | Escucha | Emite `@2` | Escucha |
+| Datos A / B | Escuchan | Escuchan `@2` | Opcional |
 
-La A es sencilla.  
-La B es la que puede costar: Compra y las dos Datos tienen que ir a la vez.
-
-## A — `campana-cambiada@1` · **firmado**
+## 1 — `campana-cambiada@1` · **firmado**
 
 [`ucjc-descubrimiento-campana-cambiada@1.md`](ucjc-descubrimiento-campana-cambiada@1.md)
 
-Firmado vía PR #1 (dani84mol / Descubrimiento). Compra y Datos deben escucharlo.
+Para el viernes: Compra y Datos A/B deben **escucharlo** de verdad (banner / etiqueta).  
+Si no lo escucháis, el contrato firmado no se nota en la tienda.
 
-## B — `pedido-confirmado@2`
+## 2 — `pedido-confirmado@2` · **propuesto**
 
 [`ucjc-compra-pedido-confirmado@2.md`](ucjc-compra-pedido-confirmado@2.md)
 
-Elegid **una**:
+Elegid **una** en clase:
 
 | Opción | Esfuerzo | Qué pasa |
 | --- | --- | --- |
-| Firmar el `@2` | Alto | Compra emite `@2`; Datos escuchan `@2`. |
-| Cambio menor en el `@1` | Bajo | No hay `@2`. En el `@1` se añaden `moneda` y `campaña` **opcionales**. Quien no los mande sigue igual. |
-| Aparcar | Ninguno | Seguimos solo con euros. |
+| Firmar el `@2` | Alto | Compra emite `@2` con `moneda` (+ `campaña` opcional); Datos escuchan `@2`. El `@1` **sigue** hasta que Digáis lo contrario. |
+| Cambio menor en el `@1` | Bajo | No hay `@2`. En el `@1` se añaden `moneda` y `campaña` **opcionales**. |
+| Aparcar | Ninguno | Seguimos solo con euros y `@1`. |
+
+**Ojo PR #3 (Adrián):** no mergear tal cual. Quiere firmar `@2` (bien) pero marca `sesion-cambiada@1` como deprecado en el README (mal: eso es Identidad).
+
+Firmas ya en el fichero: Datos A (Hans). Faltan Compra (emisor limpio) y Datos B.
+
+## 3 — `moneda-cambiada@1` · **propuesto · nuevo hoy**
+
+[`ucjc-descubrimiento-moneda-cambiada@1.md`](ucjc-descubrimiento-moneda-cambiada@1.md)
+
+En el shell (corte `v0.3.5`) Descubrimiento A/B ya cambian EUR/USD (y Compra C habla de libras).  
+Sin este contrato, Compra no se entera de la moneda del catálogo.
+
+| Opción | Esfuerzo | Qué pasa |
+| --- | --- | --- |
+| Firmar hoy | Medio | Descubrimiento emite; Compra escucha (carrito / checkout). |
+| Aparcar | Ninguno | Cada pieza sigue con su moneda local; el pedido puede mentir. |
+
+## Orden de la mesa (25/11)
+
+1. Demo rápida del shell `v0.3.5` (A/B/C).
+2. Recordar: `campana-cambiada@1` firmado → ¿quién ya escucha?
+3. Decidir `@2` / cambio menor / aparcar.
+4. Decidir `moneda-cambiada@1` sí / no.
+5. Encargo viernes 27/11: solo lo **firmado** hoy cuenta en la demo.
 
 ## Historial
 
 - `2026-11-23` — A y B en `propuesto`; Identidad fuera; A simplificada.
-- `2026-11-23` — A (`campana-cambiada@1`) → **`firmado`** (merge PR #1).
+- `2026-11-23` — A (`campana-cambiada@1`) → **`firmado`** (merge PR #1 · Daniel Molina / Descubrimiento).
+- `2026-11-25` — Mesa de aula: añadir `moneda-cambiada@1`; aviso PR #3; shell `v0.3.5`.
