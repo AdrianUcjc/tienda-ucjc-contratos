@@ -13,7 +13,7 @@ Repositorio central de **contratos de eventos** de la práctica **Tienda UCJC** 
 | Este repositorio | **Público** (escritura solo el profesor) |
 | Firmados | Flujo mínimo `@1` + [`campana-cambiada@1`](eventos/ucjc-descubrimiento-campana-cambiada@1.md) |
 | Propuestos (eventos) | [`pedido-confirmado@2`](eventos/ucjc-compra-pedido-confirmado@2.md) · [`moneda-cambiada@1`](eventos/ucjc-descubrimiento-moneda-cambiada@1.md) |
-| Propuesto (presentación) | [`presentacion-campus@1`](presentacion/ucjc-presentacion-campus@1.md) — estilo y script del shell; firman los cuatro equipos |
+| Propuesto (presentación) | [`presentacion-campus@1`](presentacion/ucjc-presentacion-campus@1.md) — estilo y script del shell; firma cada variante el 30/11 |
 | Mesa BF | [`PROPUESTA-BLACK-FRIDAY.md`](eventos/PROPUESTA-BLACK-FRIDAY.md) |
 | Shell | Tag **`v0.3.8`** · https://cesar-andress.github.io/tienda-ucjc-shell/ |
 | PR abierto | **#3** Compra — **no mergear tal cual** (depreca mal `sesion-cambiada@1`) |
