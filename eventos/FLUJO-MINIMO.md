@@ -31,12 +31,13 @@ Nada más entra en el paquete `@1`. Listados de usuarios, stock inverso Compra�
 
 Además, para entrar en el shell: `remote.js` + `export default` + Pages HTTPS (ver contrato de carga del shell). Eso es **release**, no contrato.
 
-## Estado (25/11/2026) · tag contratos `v0.2.5`
+## Estado (25/11/2026) · tag contratos `v0.2.7`
 
 1. Los tres ficheros del flujo mínimo siguen **`firmado`**.
 2. [`campana-cambiada@1`](ucjc-descubrimiento-campana-cambiada@1.md) **`firmado`**.
-3. En `propuesto` (mesa de hoy): [`pedido-confirmado@2`](ucjc-compra-pedido-confirmado@2.md) y
+3. En `propuesto` (mesa): [`pedido-confirmado@2`](ucjc-compra-pedido-confirmado@2.md) y
    [`moneda-cambiada@1`](ucjc-descubrimiento-moneda-cambiada@1.md).
    Ver [`PROPUESTA-BLACK-FRIDAY.md`](PROPUESTA-BLACK-FRIDAY.md).
-4. Shell en vivo: tag **`v0.3.5`**.  
+4. Presentación: [`../presentacion/ucjc-presentacion-campus@1.md`](../presentacion/ucjc-presentacion-campus@1.md) **`propuesto`** (firma por variante el 30/11).
+5. Shell en vivo: tag **`v0.3.10`**.  
    Nota: Datos A escucha `pedido-confirmado@2`; con Compra en `@1`, `?datos=a` puede no ver pedidos nuevos.

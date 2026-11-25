@@ -14,20 +14,31 @@ No es un evento del bus. Es el contrato de estilo y script comunes que impone el
 | --- | --- |
 | Versión del contrato | `1` |
 | ¿Sustituye a una versión anterior? | no |
+| Shell mínimo | tag `v0.3.10` (sirve `comun/campus.css` y `comun/campus.js` con `adoptar`) |
 
 ## Quién lo impone
 
 El profesor, desde el shell. Ficheros:
 
 - `comun/campus.css`: variables `--ucjc-*` en `:root` y clases `.ucjc-btn`, `.ucjc-btn-primary`, `.ucjc-label`, `.ucjc-title`.
-- `comun/campus.js`: `window.ucjcCampus` (`emitir`, `escuchar`, `leerTokens`, `adoptar`, `version`).
+- `comun/campus.js`: `window.ucjcCampus` con la API de abajo.
 
 En la tienda en vivo:
 
 - https://cesar-andress.github.io/tienda-ucjc-shell/comun/campus.css
 - https://cesar-andress.github.io/tienda-ucjc-shell/comun/campus.js
 
-El shell carga los dos ficheros antes que cualquier `remote.js`.
+El shell carga los dos ficheros **antes** que cualquier `remote.js`.
+
+## API de `window.ucjcCampus`
+
+| Método / campo | Qué hace |
+| --- | --- |
+| `version` | Cadena `'1'`. Comprobad `=== '1'` al arrancar. |
+| `emitir(nombre, detail)` | Emite `CustomEvent` en `window`. El nombre debe empezar por `ucjc:`. |
+| `escuchar(nombre, manejador)` | Escucha en `window`. Devuelve una función que deja de escuchar; llamadla en `disconnectedCallback`. |
+| `leerTokens()` | Lee las variables `--ucjc-*` ya calculadas (útil si pintáis desde JS). |
+| `adoptar(shadowRoot)` | Entrega `campus.css` a la sombra (`adoptedStyleSheets`) para que las clases `.ucjc-*` funcionen dentro, también después de repintar con `innerHTML`. |
 
 ## Quién firma
 
@@ -38,29 +49,33 @@ Cada variante enchufada en la tienda, por medio del responsable del repo que la 
 | Fecha | Qué ocurre |
 | --- | --- |
 | Miércoles 25/11/2026 | Propuesta del profesor. Se discute en aula. |
-| Lunes 30/11/2026 | Firma en aula. Cada variante trae una release con color y tipografía en variables. Defensa oral de cada grupo. |
+| Viernes 27/11/2026 | Demo de Black Friday con lo firmado; se mira también el aspecto. |
+| Lunes 30/11/2026 | Firma en aula. Cada variante trae una release con color y tipografía en variables. Defensa oral de cada grupo (8 minutos). |
 | Miércoles 2/12/2026 | Toda release nueva cumple el contrato completo. |
 | Miércoles 9/12/2026 | El shell solo enchufa variantes conformes. Las demás pasan al relleno. |
 
 ## Variables disponibles
 
-| Variable | Uso |
-| --- | --- |
-| `--ucjc-ink` | texto principal |
-| `--ucjc-muted` | texto secundario |
-| `--ucjc-fog` | fondo de página |
-| `--ucjc-mist` | fondo suave, separadores |
-| `--ucjc-panel` | superficie de tarjetas y texto sobre la marca |
-| `--ucjc-edge` | bordes |
-| `--ucjc-brand` | color de marca |
-| `--ucjc-brand-bright` | marca en acciones y estados activos |
-| `--ucjc-leaf` | éxito |
-| `--ucjc-warn` | aviso y error |
-| `--ucjc-font-sans` | texto (Figtree) |
-| `--ucjc-font-display` | títulos (Fraunces) |
-| `--ucjc-radius` | radio de esquinas |
-| `--ucjc-space`, `--ucjc-space-lg` | espaciado |
-| `--ucjc-ease` | curva de animación |
+| Variable | Uso | Reserva típica |
+| --- | --- | --- |
+| `--ucjc-ink` | texto principal | `#1a242c` |
+| `--ucjc-muted` | texto secundario | `#5a6a76` |
+| `--ucjc-fog` | fondo de página | `#f3f6f4` |
+| `--ucjc-mist` | fondo suave, separadores | `#e6ece8` |
+| `--ucjc-panel` | superficie y texto sobre la marca | `#fbfcfb` |
+| `--ucjc-edge` | bordes | (derivado de la marca) |
+| `--ucjc-brand` | color de marca | `#0b3d4a` |
+| `--ucjc-brand-bright` | marca en acciones y estados activos | `#146b7a` |
+| `--ucjc-leaf` | éxito | `#2f6f4e` |
+| `--ucjc-warn` | aviso y error | `#8a3a3a` |
+| `--ucjc-font-sans` | texto (Figtree) | `"Segoe UI", sans-serif` |
+| `--ucjc-font-display` | títulos (Fraunces) | `Georgia, serif` |
+| `--ucjc-radius` | radio de esquinas | `6px` |
+| `--ucjc-space` | espaciado corto | `0.75rem` |
+| `--ucjc-space-lg` | espaciado largo | `1.25rem` |
+| `--ucjc-max` | ancho máximo de layout | `72rem` |
+| `--ucjc-ease` | curva de animación | — |
+| `--ucjc-presentacion` | versión del contrato de presentación | `"1"` |
 
 Si falta una variable que necesitáis, se pide por PR a este contrato. No se inventa en la pieza.
 
@@ -84,7 +99,7 @@ Si falta una variable que necesitáis, se pide por PR a este contrato. No se inv
 
 Las variables `--ucjc-*` se heredan y atraviesan el Shadow DOM: con ellas basta para unificar color, tipografía, radios y espacios.
 
-Las clases `.ucjc-*` no atraviesan el Shadow DOM. Si queréis usar `.ucjc-btn`, `.ucjc-label` o `.ucjc-title` dentro de la pieza, llamad a `ucjcCampus.adoptar(this.shadowRoot)` al montar (por ejemplo en `connectedCallback`). Eso entrega `campus.css` a vuestra sombra. Sin `adoptar()`, las clases no pintan nada dentro del Shadow DOM.
+Las clases `.ucjc-*` no atraviesan el Shadow DOM. Si queréis usar `.ucjc-btn`, `.ucjc-label` o `.ucjc-title` dentro de la pieza, llamad una vez a `ucjcCampus.adoptar(this.shadowRoot)` al montar (por ejemplo en `connectedCallback`). La hoja de campus se entrega con `adoptedStyleSheets`: no es un nodo de vuestro árbol, así que sigue ahí aunque repintéis con `this.shadowRoot.innerHTML = ...`. Es asíncrono: las clases se aplican en cuanto la hoja termina de cargar. Sin `adoptar()`, las clases no pintan nada dentro del Shadow DOM.
 
 ## Qué no obliga
 
@@ -168,7 +183,8 @@ Una fila por variante. La release es el tag que demuestra la conformidad.
 
 ## Historial
 
-- `2026-11-25` — Propuesta del profesor: estilo y script comunes desde el shell; firman los cuatro equipos.
-- `2026-11-25` — API en español (`emitir` / `escuchar` / `leerTokens`).
-- `2026-11-25` — Firma por variante, fechas de entrada en vigor, valores de reserva, sin `!important`, listeners que se quitan, un test por evento emitido; ejemplo sin colores escritos a mano; nota sobre las clases y el Shadow DOM.
-- `2026-11-25` — `ucjcCampus.adoptar(shadowRoot)` para usar `.ucjc-*` dentro del Shadow DOM (transparencias 25/11).
+- `2026-11-25` — Propuesta del profesor: estilo y script comunes desde el shell; firma por variante.
+- `2026-11-25` — API en español (`emitir` / `escuchar` / `leerTokens` / `adoptar`).
+- `2026-11-25` — Fechas de entrada en vigor, valores de reserva, sin `!important`, listeners que se quitan, un test por evento emitido.
+- `2026-11-25` — Tabla de variables con reserva típica; API documentada; shell mínimo `v0.3.10`.
+- `2026-11-25` — `adoptar()` con `adoptedStyleSheets`: la hoja sobrevive a los repintados con `innerHTML`; `leerTokens().presentacion` devuelve `1` sin comillas.

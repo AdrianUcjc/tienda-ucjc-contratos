@@ -1,21 +1,21 @@
 # tienda-ucjc-contratos
 
-Repositorio central de **contratos de eventos** de la práctica **Tienda UCJC** (Desarrollo de Front-End, UCJC, curso 2026/2027).
+Repositorio central de **contratos** de la práctica **Tienda UCJC** (Desarrollo de Front-End, UCJC, curso 2026/2027): eventos del bus y presentación (CSS/JS) del shell.
 
 **Repositorio (público):** https://github.com/cesar-andress/tienda-ucjc-contratos  
 **Shell en vivo:** https://cesar-andress.github.io/tienda-ucjc-shell/
 
-## Situación actual (25/11/2026) · tag `v0.2.6`
+## Situación actual (25/11/2026) · tag `v0.2.7`
 
 | Hecho | Estado |
 | --- | --- |
-| Tag / release | **`v0.2.6`** — `presentacion-campus@1` (CSS/JS del shell) + flujo mínimo + `campana-cambiada@1` |
+| Tag / release | **`v0.2.7`** — `presentacion-campus@1` completo + flujo mínimo + `campana-cambiada@1` |
 | Este repositorio | **Público** (escritura solo el profesor) |
 | Firmados | Flujo mínimo `@1` + [`campana-cambiada@1`](eventos/ucjc-descubrimiento-campana-cambiada@1.md) |
 | Propuestos (eventos) | [`pedido-confirmado@2`](eventos/ucjc-compra-pedido-confirmado@2.md) · [`moneda-cambiada@1`](eventos/ucjc-descubrimiento-moneda-cambiada@1.md) |
-| Propuesto (presentación) | [`presentacion-campus@1`](presentacion/ucjc-presentacion-campus@1.md) — estilo y script del shell; firma cada variante el 30/11 |
+| Propuesto (presentación) | [`presentacion-campus@1`](presentacion/ucjc-presentacion-campus@1.md) — CSS/JS del shell; firma cada variante el 30/11 |
 | Mesa BF | [`PROPUESTA-BLACK-FRIDAY.md`](eventos/PROPUESTA-BLACK-FRIDAY.md) |
-| Shell | Tag **`v0.3.9`** · https://cesar-andress.github.io/tienda-ucjc-shell/ · incluye `adoptar()` |
+| Shell | Tag **`v0.3.10`** · https://cesar-andress.github.io/tienda-ucjc-shell/ |
 | PR abierto | **#3** Compra — **no mergear tal cual** (depreca mal `sesion-cambiada@1`) |
 
 ### Los tres mensajes del flujo mínimo (nombres canónicos)
@@ -58,14 +58,17 @@ Los equipos **no** pueden abrir ni importar el código de otro micro-frontend. L
 
 ## Para qué sirve este repositorio
 
-Aquí se documenta **qué eventos** puede emitir o escuchar cada pieza y **qué campos** viajan en cada evento.
+Aquí se documenta:
 
-- Si el Markdown no está en [`eventos/`](eventos/) de `main`, **no existe** para la tienda.
-- El código de cada equipo implementa lo firmado; no inventa campos ni nombres por su cuenta.
-- El shell no conoce el interior de las piezas: solo carga releases y deja circular los eventos por `window`.
+1. **Eventos** — qué puede emitir o escuchar cada pieza y qué campos viajan en `detail` ([`eventos/`](eventos/)).
+2. **Presentación** — estilo y script comunes que impone el shell ([`presentacion/`](presentacion/)).
 
-Plantilla: [`PLANTILLA-EVENTO.md`](PLANTILLA-EVENTO.md).  
-Cómo se ve un fichero relleno: [`eventos/EJEMPLO-como-rellenar.md`](eventos/EJEMPLO-como-rellenar.md).
+- Si el Markdown de un evento no está en [`eventos/`](eventos/) de `main`, **no existe** para la tienda.
+- El código de cada equipo implementa lo firmado; no inventa campos, nombres ni paletas por su cuenta.
+- El shell no conoce el interior de las piezas: carga releases, deja circular los eventos por `window` y entrega `comun/campus.*`.
+
+Plantilla de evento: [`PLANTILLA-EVENTO.md`](PLANTILLA-EVENTO.md).  
+Ejemplo de formato: [`eventos/EJEMPLO-como-rellenar.md`](eventos/EJEMPLO-como-rellenar.md).
 
 ## Qué es un contrato entre micro-frontends
 
@@ -107,7 +110,7 @@ Reglas:
 
 - El **nombre** lo propone quien emite; los **campos** se firman con quien consume.
 - Cada equipo solo propone eventos que **emite**.
-- No dejéis Markdown de contratos en la **raíz** del repo: solo en `eventos/`.
+- No dejéis Markdown de contratos en la **raíz** del repo: eventos en `eventos/`, presentación en `presentacion/`.
 
 ## Modelo de contribución: fork + Pull Request
 
@@ -133,9 +136,10 @@ Desacuerdos: Issue con etiqueta `conflicto`.
 
 | Ruta | Uso |
 | --- | --- |
-| [`PLANTILLA-EVENTO.md`](PLANTILLA-EVENTO.md) | Modelo para cada contrato |
+| [`PLANTILLA-EVENTO.md`](PLANTILLA-EVENTO.md) | Modelo para cada contrato de evento |
 | [`CONTRIBUYENDO.md`](CONTRIBUYENDO.md) | Fork + PR día a día |
-| [`eventos/`](eventos/) | Contratos firmados (+ ejemplo de formato + flujo mínimo) |
+| [`eventos/`](eventos/) | Contratos de eventos (+ ejemplo + flujo mínimo + mesa BF) |
+| [`presentacion/`](presentacion/) | Contrato de CSS/JS del shell (`presentacion-campus@1`) |
 | [`.github/`](.github/) | Plantillas de Issue y Pull Request |
 
 ## Referencias

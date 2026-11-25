@@ -41,7 +41,7 @@ Firmas ya en el fichero: Datos A (Hans). Faltan Compra (emisor limpio) y Datos B
 
 [`ucjc-descubrimiento-moneda-cambiada@1.md`](ucjc-descubrimiento-moneda-cambiada@1.md)
 
-En el shell (corte `v0.3.5`) Descubrimiento A/B ya cambian EUR/USD (y Compra C habla de libras).  
+En el shell (corte `v0.3.10`) Descubrimiento A/B ya cambian EUR/USD (y Compra C habla de libras).  
 Sin este contrato, Compra no se entera de la moneda del catálogo.
 
 | Opción | Esfuerzo | Qué pasa |
@@ -51,7 +51,7 @@ Sin este contrato, Compra no se entera de la moneda del catálogo.
 
 ## Orden de la mesa (25/11)
 
-1. Demo rápida del shell `v0.3.5` (A/B/C).
+1. Demo rápida del shell `v0.3.10` (A/B/C).
 2. Recordar: `campana-cambiada@1` firmado → ¿quién ya escucha?
 3. Decidir `@2` / cambio menor / aparcar.
 4. Decidir `moneda-cambiada@1` sí / no.
@@ -61,4 +61,4 @@ Sin este contrato, Compra no se entera de la moneda del catálogo.
 
 - `2026-11-23` — A y B en `propuesto`; Identidad fuera; A simplificada.
 - `2026-11-23` — A (`campana-cambiada@1`) → **`firmado`** (merge PR #1 · Daniel Molina / Descubrimiento).
-- `2026-11-25` — Mesa de aula: añadir `moneda-cambiada@1`; aviso PR #3; shell `v0.3.5`.
+- `2026-11-25` — Mesa de aula: añadir `moneda-cambiada@1`; aviso PR #3; shell `v0.3.10`.
