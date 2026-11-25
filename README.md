@@ -13,9 +13,9 @@ Repositorio central de **contratos de eventos** de la práctica **Tienda UCJC** 
 | Este repositorio | **Público** (escritura solo el profesor) |
 | Firmados | Flujo mínimo `@1` + [`campana-cambiada@1`](eventos/ucjc-descubrimiento-campana-cambiada@1.md) |
 | Propuestos (eventos) | [`pedido-confirmado@2`](eventos/ucjc-compra-pedido-confirmado@2.md) · [`moneda-cambiada@1`](eventos/ucjc-descubrimiento-moneda-cambiada@1.md) |
-| Propuesto (presentación) | [`presentacion-campus@1`](presentacion/ucjc-presentacion-campus@1.md) — CSS/JS del shell; firman los cuatro equipos |
+| Propuesto (presentación) | [`presentacion-campus@1`](presentacion/ucjc-presentacion-campus@1.md) — estilo y script del shell; firman los cuatro equipos |
 | Mesa BF | [`PROPUESTA-BLACK-FRIDAY.md`](eventos/PROPUESTA-BLACK-FRIDAY.md) |
-| Shell | Tag **`v0.3.7`** · https://cesar-andress.github.io/tienda-ucjc-shell/ |
+| Shell | Tag **`v0.3.8`** · https://cesar-andress.github.io/tienda-ucjc-shell/ |
 | PR abierto | **#3** Compra — **no mergear tal cual** (depreca mal `sesion-cambiada@1`) |
 
 ### Los tres mensajes del flujo mínimo (nombres canónicos)
@@ -36,7 +36,7 @@ ucjc:compra:pedido-confirmado@1
 | `moneda-cambiada@1` | [`eventos/ucjc-descubrimiento-moneda-cambiada@1.md`](eventos/ucjc-descubrimiento-moneda-cambiada@1.md) | `propuesto` |
 | `presentacion-campus@1` | [`presentacion/ucjc-presentacion-campus@1.md`](presentacion/ucjc-presentacion-campus@1.md) | `propuesto` |
 
-El `@1` / `@2` es la versión del **contrato del evento**. No es lo mismo que el tag de la pieza (`v0.2.0`, `v1.0.0`, …). La presentación campus no es un evento: es CSS/JS que impone el shell.
+El `@1` / `@2` es la versión del **contrato del evento**. No es lo mismo que el tag de la pieza (`v0.2.0`, `v1.0.0`, …). La presentación campus no es un evento: es el estilo y el script que impone el shell.
 
 **Black Friday:** mesa 25/11 → demo 27/11. Ver [`PROPUESTA-BLACK-FRIDAY.md`](eventos/PROPUESTA-BLACK-FRIDAY.md).
 ## Qué es Tienda UCJC
